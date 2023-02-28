@@ -5,22 +5,22 @@ from send_alerts_stub import send_alerts_stub
 
 
 class TypewiseTest(unittest.TestCase):
-  def test_infers_breach_as_per_limits(self):
-      #PASSIVE_COOLING_TEST
+  def limits(self):
+      #PASSIVE
     self.assertTrue(typewise_alert.infer_breach(0, 0, 35) == 'NORMAL')
     self.assertEqual(typewise_alert.infer_breach(35, 0, 35) , 'NORMAL')
     self.assertEqual(typewise_alert.infer_breach(-1, 0, 35) , 'TOO_LOW')
     self.assertEqual(typewise_alert.infer_breach(1, 0, 35) , 'NORMAL')
     self.assertEqual(typewise_alert.infer_breach(34, 0, 35) , 'NORMAL')
     self.assertEqual(typewise_alert.infer_breach(36, 0, 35), 'TOO_HIGH')
-    #HI_ACTIVE_COOLING_TEST
+    #ACTIVE
     self.assertTrue(typewise_alert.infer_breach(0, 0, 45) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(45, 0, 45) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(-1, 0, 45) == 'TOO_LOW')
     self.assertTrue(typewise_alert.infer_breach(1, 0, 45) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(44, 0, 45) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(46, 0, 45) == 'TOO_HIGH')
-    #MED_ACTIVE_COOLING_TEST
+    #MED
     self.assertTrue(typewise_alert.infer_breach(0, 0, 40) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(40, 0, 40) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(-1, 0, 40) == 'TOO_LOW')
