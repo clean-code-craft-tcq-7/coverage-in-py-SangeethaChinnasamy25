@@ -8,11 +8,11 @@ class TypewiseTest(unittest.TestCase):
   def test_infers_breach_as_per_limits(self):
       #PASSIVE_COOLING_TEST
     self.assertTrue(typewise_alert.infer_breach(0, 0, 35) == 'NORMAL')
-    self.assertEqual(typewise_alert.infer_breach(35, 0, 35) , 'NORMAL')
-    self.assertEqual(typewise_alert.infer_breach(-1, 0, 35) , 'TOO_LOW')
-    self.assertEqual(typewise_alert.infer_breach(1, 0, 35) , 'NORMAL')
-    self.assertEqual(typewise_alert.infer_breach(34, 0, 35) , 'NORMAL')
-    self.assertEqual(typewise_alert.infer_breach(36, 0, 35), 'TOO_HIGH')
+    self.assertEqual(typewise_alert.infer_breach(35, 0, 35) == 'NORMAL')
+    self.assertEqual(typewise_alert.infer_breach(-1, 0, 35) == 'TOO_LOW')
+    self.assertEqual(typewise_alert.infer_breach(1, 0, 35) == 'NORMAL')
+    self.assertEqual(typewise_alert.infer_breach(34, 0, 35) == 'NORMAL')
+    self.assertEqual(typewise_alert.infer_breach(36, 0, 35)== 'TOO_HIGH')
     #HI_ACTIVE_COOLING_TEST
     self.assertTrue(typewise_alert.infer_breach(0, 0, 45) == 'NORMAL')
     self.assertTrue(typewise_alert.infer_breach(45, 0, 45) == 'NORMAL')
