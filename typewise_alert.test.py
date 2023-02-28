@@ -35,18 +35,5 @@ class TypewiseTest(unittest.TestCase):
     self.assertTrue(send_alerts('TO_EMAIL', 'TOO_HIGH') == 1)
     self.assertTrue(send_alerts('TO_EMAIL', 'NORMAL') == 0)
 
-    # batteryChar = {'coolingType' : 'HI_ACTIVE_COOLING'}
-    # self.assertTrue(typewise_alert.check_and_alert('TO_CONTROLLER', batteryChar, 1) == 1)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, -1) == 1)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, 46) == 1)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, 1) == 0)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, 44) == 0)
-    # batteryChar = {'coolingType' : 'MED_ACTIVE_COOLING'}
-    # self.assertTrue(typewise_alert.check_and_alert('TO_CONTROLLER', batteryChar, 1) == 1)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, -1) == 1)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, 41) == 1)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, 1) == 0)
-    # self.assertTrue(typewise_alert.check_and_alert('TO_EMAIL', batteryChar, 39) == 0)
-
 if __name__ == '__main__':
   unittest.main()
