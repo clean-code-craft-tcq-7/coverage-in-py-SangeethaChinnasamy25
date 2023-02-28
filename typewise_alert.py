@@ -1,4 +1,4 @@
-from limits import inputs
+from inputs import inputs
 from send_alerts import send_alerts
 
 
